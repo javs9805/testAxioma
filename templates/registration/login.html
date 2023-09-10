@@ -1,0 +1,28 @@
+{% extends 'login/base.html' %}
+{% load static %}
+{% block content %}
+<main class="main">
+    <img class="main-bg-image" src="{% static 'images/bg-login.jpeg' %}" alt="" />
+    <div class="py-5">
+        <form action="" method="post" class="form-block mx-auto">
+            {% csrf_token %}
+            <h1 class="title">Bienvenido a nuestro Portal <br> Personas <b>Banco en Línea</b></h1>
+            {% if noExiste %}
+                <span class="mb-n2">El usuario no existe</span>
+            {% elif inactivo %}
+                <span class="mb-n2">El usuario esta inactivo, porfavor contacte con el administrador</span>
+            {% elif intentos %}
+                <span class="mb-n2">Las credenciales son inválidas</span>
+            {% endif %}
+            
+            <div class="input-container mt-4">
+                {{ form.rut }}
+            </div>
+            <div class="input-container mt-4">
+                {{ form.password }}
+            </div>
+            <input type="submit" class="btn btn-success mt-4" value = "Ingresar">
+        </form>
+    </div>
+</main>
+{% endblock %}
