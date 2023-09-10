@@ -68,7 +68,7 @@ Ahora, el proyecto debería estar en funcionamiento y accesible en http://localh
 
 7. Crear usuarios de prueba:
 
-Cree el superusuario y un usuario de prueba con el siguiente comando:
+Cree el superusuario y un usuario de prueba ejecutando el siguiente comando y siguiendo las instrucciones que indica el script:
 
 ```
 python create_users.py
